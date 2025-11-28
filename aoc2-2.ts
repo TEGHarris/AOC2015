@@ -12,18 +12,18 @@ class Present {
   h: number;
   w: number;
   l: number;
-  wrappingPaperRequired : number;
+  volume : number;
+  ribbonRequired : number;
   constructor(h: number, w: number, l: number) {
     this.h = h;
     this.w = w;
     this.l = l;
-    this.wrappingPaperRequired = this.getSurfaceArea() + this.findSmallest()
+    this.volume = this.h * this.w * this.l
+    this.ribbonRequired = this.volume + this.findSmallestPerimeter()
   }
-  getSurfaceArea() {
-    return 2 * this.l * this.w + 2 * this.w * this.h + 2 * this.h * this.l;
-  }
-  findSmallest() {
-    return Math.min((this.l * this.w), (this.w * this.h),(this.h * this.l));
+  
+  findSmallestPerimeter() {
+    return Math.min((2 * (this.l + this.w)), (2 * (this.h + this.w)),(2 * (this.l + this.h)));
   }
 
 }
@@ -35,9 +35,8 @@ for (let i of dimensions) {
 }
 console.log(presents)
 const total = presents.reduce((acc : number, current: Present) => {
-    return acc += current.wrappingPaperRequired;
+    return acc += current.ribbonRequired;
 },0);
 console.log(total)
 // console.log(presents[presents.length-1])
 // console.log(dimensions[dimensions.length-1])
-export {};
