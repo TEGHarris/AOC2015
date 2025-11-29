@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
-        "module": "ESNext",
+        "module": "commonjs",
         "moduleResolution": "node",
-        "target": "ES2024",
+        "target": "es2020",
         "jsx": "react-jsx",
         "strictNullChecks": true,
         "strictFunctionTypes": true,
         "strict": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "types": ["node"],
+        "lib": ["es2020"]
     },
     "exclude": [
         "node_modules",
