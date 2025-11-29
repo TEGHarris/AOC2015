@@ -42,3 +42,4 @@ directions.forEach((element: string) => {
 });
 console.log(houses);
 console.log(houses.size);
+export{};
