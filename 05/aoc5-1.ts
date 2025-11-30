@@ -12,8 +12,11 @@ const constainsThreeVowels = (word: string) => {
     if (vowels.includes(i)) vowelCount++;
   }
   if (vowelCount < 3) {
-    console.log(`${word} is invalid because it contains less than 3 vowels (${vowelCount})`)
-    return false;}
+    console.log(
+      `${word} is invalid because it contains less than 3 vowels (${vowelCount})`
+    );
+    return false;
+  }
   return true;
 };
 
@@ -21,7 +24,9 @@ const containsForbiddenStrings = (word: string) => {
   const forbiddenStrings = ["ab", "cd", "pq", "xy"];
   for (const e of forbiddenStrings) {
     if (word.includes(e)) {
-      console.log(`${word} is invalid because it contains the forbidden string ${e}`);
+      console.log(
+        `${word} is invalid because it contains the forbidden string ${e}`
+      );
       return false;
     }
   }
@@ -32,7 +37,7 @@ const containsDouble = (word: string) => {
   for (let i = 0; i < word.length; i++) {
     if (word[i] === word[i + 1]) return true;
   }
-  console.log(`${word} is invalid because it contains no double letters`)
+  console.log(`${word} is invalid because it contains no double letters`);
   return false;
 };
 
@@ -49,3 +54,4 @@ const total = words.reduce(
   0
 );
 console.log(total);
+export {};
