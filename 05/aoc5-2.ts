@@ -32,3 +32,4 @@ const total = words.reduce(
   0
 );
 console.log(total);
+export {};
